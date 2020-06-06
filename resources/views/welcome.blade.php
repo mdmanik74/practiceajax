@@ -11,10 +11,10 @@
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Dist</th>
+                <th>Regi date</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -44,28 +44,29 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-     <form>
+     <form action="{{route('store')}}" method="POST">
+      @csrf
     <div class="modal-content">
       <div class="modal-body">
   <div class="form-group">
     <label for="exampleInputname">Full Name</label>
-    <input type="text" class="form-control" id="exampleInputname"  placeholder="Enter Your Full Name">
+    <input type="text" name="Fname" required="" class="form-control" id="exampleInputname"  placeholder="Enter Your Full Name">
   </div>
   <div class="form-group">
     <label for="exampleInputname">Phone Number</label>
-    <input type="number" class="form-control" id="exampleInputname"  placeholder="Enter Your phone Number">
+    <input type="number" class="form-control" name="phn" id="exampleInputname"  placeholder="Enter Your phone Number">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
   </div>
   
   <div class="form-group">
     <label for="exampleInputname">Your District</label>
-    <input type="text" class="form-control" id="exampleInputname"  placeholder="Enter Your location district">
+    <input type="text" class="form-control" name="dist" id="exampleInputname"  placeholder="Enter Your location district">
 </div>
     <div class="form-group">
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" id="customerForm" class="btn btn-primary">Submit</button>
 </div>
       </div>
      
