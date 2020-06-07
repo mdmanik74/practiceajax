@@ -21,11 +21,7 @@ class CustomerController extends Controller
     		"created_at"=>Carbon::now(),
     	
     	]);
-    	if ($insert) {
-    		return response()->json('success');
-    	}else{
-    		return response()->json('error');
-    	}
+    	return back()->with('successMsg','Data Successfully Saved');
 
     }
 }

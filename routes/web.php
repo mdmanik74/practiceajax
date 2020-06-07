@@ -13,4 +13,4 @@
 
 
 Route::get('/','CustomerController@index')->name('welcome');
-Route::post('customer','CustomerController@store')->name('store');
+Route::post('/customer','CustomerController@store')->name('store');

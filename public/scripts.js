@@ -5,11 +5,7 @@
 		var url=form.attr('action');
 		var type=form.attr('method');
 		var data = form.serialize();
-		 $.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
+		 
 		$.ajax({
 			url:url,
 			data:data,
@@ -17,13 +13,13 @@
 			dataType: 'json',
 			
 			success:function(data){
-				if (data=="success") {
+				if (data=="successMsg") {
 					$('#exampleModal').modal('hide');
 					
-					Swal.fire('Successfully Customer Data Inserted')
+					
 				}
 			}
-			return false;
+			
 		});
 	});
 });
