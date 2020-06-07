@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<div class="card-header">
- 
  @include('alert.msg')
+<div class="card-header">
+
     <div class="pull-right">
         <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Customer</button>
     </div>
@@ -10,6 +10,7 @@
 <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
+                <th>Sl</th>
                 <th>Name</th>
                 <th>Phone</th>
                 <th>Email</th>
@@ -19,25 +20,28 @@
             </tr>
         </thead>
         <tbody>
+           @foreach($customers as $key=>$category)
+                
             <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
+               <td>{{$key+1}}</td>
+                <td>{{$category->Fname}}</td>
+                <td>{{$category->phn}}</td>
+                <td>{{$category->email}}</td>
+                <td>{{$category->dist}}</td>
+                <td>{{ \Carbon\Carbon::parse($category->create_at)->format('d/m/Y')}}</td>
                 <td>
                     <a href="" class="btn btn-sm btn-success">View</a>
                      <a href="" class="btn btn-sm btn-primary">Edit</a>
                       <a href="" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
-            
+            @endforeach
             
         </tbody>
         <tfoot>
         </tfoot>
     </table>
-
+    {{$customers->links()}}
     <!-- Add customer modal -->
     <!-- Button trigger modal -->
 

@@ -9,7 +9,8 @@ class CustomerController extends Controller
 {
    public function index(){
 
-   	return view('welcome');
+    $customers=Customer::latest()->paginate(8);
+   	return view('welcome',compact('customers'));
    }
     public function store(Request $get){
 
