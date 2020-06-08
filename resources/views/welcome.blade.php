@@ -30,9 +30,9 @@
                 <td>{{$category->dist}}</td>
                 <td>{{ \Carbon\Carbon::parse($category->create_at)->format('d/m/Y')}}</td>
                 <td>
-                    <a href="" class="btn btn-sm btn-success">View</a>
-                     <a href="" class="btn btn-sm btn-primary">Edit</a>
-                      <a href="" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="{{ route('view',$category->id) }}" data-toggle="modal" data-target="#view-modal" id="view" class="btn btn-sm btn-success">View</a>
+                     <a href="{{ route('edit',$category->id) }}" id="edit" class="btn btn-sm btn-primary">Edit</a>
+                      <a href="" id="delete" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
             @endforeach
@@ -41,7 +41,7 @@
         <tfoot>
         </tfoot>
     </table>
-    {{$customers->links()}}
+  
     <!-- Add customer modal -->
     <!-- Button trigger modal -->
 
@@ -82,5 +82,74 @@
      </form>
   </div>
 </div>
+
+<!-- view -->
+
+<div id="view-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+   <div class="modal-dialog"> 
+      <div class="modal-content"> 
+                  
+         <div class="modal-header"> 
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> 
+             <h4 class="modal-title">
+             <i class="glyphicon glyphicon-user"></i> User Profile
+             </h4> 
+         </div> 
+         
+         <div class="modal-body"> 
+                       
+             
+                       
+             <div id="dynamic-content"> <!-- mysql data will load in table -->
+                                        
+                 <div class="row"> 
+                     <div class="col-md-12"> 
+                        
+                     <div class="table-responsive">
+                             
+                     <table class="table table-striped table-bordered">
+                     <tr>
+                     <th>First Name</th>
+                     <td id="Fname">{{$custom->Fname}}</td>
+                     </tr>
+                                     
+                     <tr>
+                     <th>Phone</th>
+                     <td id="phn"></td>
+                     </tr>
+                                         
+                     <tr>
+                     <th>Email ID</th>
+                     <td id="email"></td>
+                     </tr>
+                                         
+                     <tr>
+                     <th>Location</th>
+                     <td id="dist"></td>
+                     </tr>
+                                 
+                     </table>
+                                
+                     </div>
+                                       
+                   </div> 
+              </div>
+                       
+             </div> 
+                             
+         </div> 
+           
+       <div class="modal-footer"> 
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>  
+       </div>  
+              
+      </div> 
+   </div>
+</div>
+
+
+
+
+
 
     @endsection

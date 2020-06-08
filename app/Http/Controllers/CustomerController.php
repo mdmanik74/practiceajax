@@ -25,4 +25,14 @@ class CustomerController extends Controller
     	return back()->with('successMsg','Data Successfully Saved');
 
     }
+
+    public function edit(){
+      return view('edit',compact('customers'));
+    }
+
+    public function view(Request $get){
+      $id=$get->id;
+      $custom=Customer::find($id);
+      return $custom;
+    }
 }
