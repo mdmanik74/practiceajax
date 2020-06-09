@@ -9,18 +9,18 @@
    <div class="row">
     <div class="col-md-6"> Ajax to do List</div>
     <div class="col-md-6 text-right">
-      <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">+ Add </button>
+      <button class="btn btn-primary" id="addButton" data-toggle="modal" data-target="#exampleModal">+ Add </button>
     </div>
 </div>
     
   </div>
 
   <ul class="list-group">
-  <li class="list-group-item">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
+  <li class="list-group-item ourItem" data-toggle="modal" data-target="#exampleModal">Cras justo odio</li>
+  <li class="list-group-item ourItem" data-toggle="modal" data-target="#exampleModal">Dapibus ac facilisis in</li>
+  <li class="list-group-item ourItem" data-toggle="modal" data-target="#exampleModal">Morbi leo risus</li>
+  <li class="list-group-item ourItem" data-toggle="modal" data-target="#exampleModal">Porta ac consectetur ac</li>
+  <li class="list-group-item ourItem" data-toggle="modal" data-target="#exampleModal">Vestibulum at eros</li>
 </ul>
 </div>
 </div>
@@ -33,14 +33,17 @@
      <form id="customerForm"  method="POST">
       @csrf
     <div class="modal-content">
+      <div class="card-header" id="title">Add New Item</div>
       <div class="modal-body">
   <div class="form-group">
     <label for="exampleInputname">Full Name</label>
-    <input type="text" name="Fname" required="" class="form-control" id="exampleInputname"  placeholder="Enter Your Full Name">
+    <input type="text" name="addItem" required="" class="form-control" id="exampleInputname"  placeholder="Enter addItem name">
   </div>
   
     <div class="form-group">
-  <button type="submit"  class="btn btn-primary">Submit</button>
+  <button type="submit" id="btnhidden" class="btn btn-primary">Submit</button>
+  <button type="button" id="delete" class="btn btn-danger">Delete</button>
+  <button type="button" id="savechanage"  class="btn btn-warning">Save Change</button>
 </div>
       </div>
      
@@ -52,6 +55,10 @@
      </form>
   </div>
 </div>
+<script type="text/javascript">
+  
+
+</script>
 
 <!-- view -->
 
