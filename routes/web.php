@@ -12,7 +12,4 @@
 */
 
 
-Route::get('/','CustomerController@index')->name('welcome');
-Route::post('/customer','CustomerController@store')->name('store');
-Route::get('/edit','CustomerController@edit')->name('edit');
-Route::get('/view','CustomerController@view')->name('view');
+Route::get('/','HomeController@index')->name('welcome');
