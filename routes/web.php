@@ -13,5 +13,5 @@
 
 
 Route::get('/','HomeController@index')->name('welcome');
-Route::post('create','HomeController@create');
+Route::post('/create','HomeController@create')->name('create');
 

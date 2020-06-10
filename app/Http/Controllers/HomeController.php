@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Item;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -10,11 +10,12 @@ class HomeController extends Controller
 		 return view('welcome');
 	}
 
-	public function create(requst $requst){
-		$item= New Item;
-		$item->items= $requst->items;
-		$item->save();
-		 return 'done';
+	public function create(Request $request){
+	
+	    $item= new Item();
+        $item->items=$request->items;
+        $item->save();
+        return 'Data Successfully insert';
 	}
    
 }

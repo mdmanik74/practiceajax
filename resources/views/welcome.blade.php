@@ -9,7 +9,7 @@
    <div class="row">
     <div class="col-md-6"> Ajax to do List</div>
     <div class="col-md-6 text-right">
-      <button class="btn btn-primary" id="addButton" data-toggle="modal" data-target="#exampleModal">+ Add </button>
+      <button class="btn btn-primary" id="addNew" data-toggle="modal" data-target="#exampleModal">+ Add </button>
     </div>
 </div>
     
@@ -30,18 +30,18 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-     <form id="customerForm"  method="POST">
+    
       @csrf
     <div class="modal-content">
       <div class="card-header" id="title">Add New Item</div>
       <div class="modal-body">
   <div class="form-group">
     <label for="exampleInputname">Full Name</label>
-    <input type="text" name="addItem" required="" class="form-control" id="exampleInputname"  placeholder="Enter addItem name">
+    <input type="text" name="items" id="addItem" required="" class="form-control" id="exampleInputname"  placeholder="Enter addItem name">
   </div>
   
     <div class="form-group">
-  <button type="submit" id="btnhidden" class="btn btn-primary">Submit</button>
+  <button type="submit" id="AddButton" class="btn btn-primary">Submit</button>
   <button type="button" id="delete" class="btn btn-danger">Delete</button>
   <button type="button" id="savechanage"  class="btn btn-warning">Save Change</button>
 </div>
@@ -52,7 +52,7 @@
        <button class="btn btn-danger" type="reset">Reset</button>
       </div>
     </div>
-     </form>
+    
   </div>
 </div>
 <script type="text/javascript">

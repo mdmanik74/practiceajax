@@ -6,23 +6,32 @@
         $('#title').text('Edit Item');
         $('#delete').show('400');
         $('#savechanage').show('400');
-         $('#btnhidden').hide('400');
+         $('#AddButton').hide('400');
         console.log(text);
       });
     });
-     $('#addButton').click(function(event){
+     $('#addNew').click(function(event){
      	var text= $(this).text();
         $('#addItem').val('');
         $('#title').text('Add New Item');
         $('#delete').hide('400');
         $('#savechanage').hide('400');
-         $('#btnhidden').show('400');
+         $('#AddButton').show('400');
         console.log(text);
   });
-     $('#addButton').click(function(event){
-     	var text = $('#addItem').val();
-     	$.post('list',{'text':text,'_tolen':$('input[name_token]').val()}, function(data){
-     		 console.log(text);
-     });
-     	  });
+
+      $('#AddButton').click(function(){   
+  console.log($('input[name=items]').val());
+    $.ajax({
+      url: 'create',
+      type: "post",
+
+      data: {'items':$('input[name=items]').val(), '_token': $('input[name=_token]').val(),'_method': 'POST'},
+      success: function(data){
+      console.log($('input[name=items]').val());
+        alert(data);
+      }
+    });      
+  }); 
+     
  });
