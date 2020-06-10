@@ -28,8 +28,11 @@
 
       data: {'items':$('input[name=items]').val(), '_token': $('input[name=_token]').val(),'_method': 'POST'},
       success: function(data){
+        $('input').val('');
       console.log($('input[name=items]').val());
+      $("#itms").load(location.href + " #itms");
         alert(data);
+       
       }
     });      
   }); 

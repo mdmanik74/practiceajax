@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
 	public function index(){
-		 return view('welcome');
+
+		$item=Item::latest()->paginate(8);
+		 return view('welcome',compact('item'));
 	}
 
 	public function create(Request $request){

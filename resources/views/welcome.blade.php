@@ -7,21 +7,23 @@
    <div class="col-md-6">
 <div class="card-header">
    <div class="row">
-    <div class="col-md-6"> Ajax to do List</div>
+    <div class="col-md-6"> Ajax to do List : Total- {{ $item->total() }}</div>
     <div class="col-md-6 text-right">
       <button class="btn btn-primary" id="addNew" data-toggle="modal" data-target="#exampleModal">+ Add </button>
     </div>
 </div>
     
   </div>
-
+<hr>
+<div class="pannel-body" id="itms">
   <ul class="list-group">
-  <li class="list-group-item ourItem" data-toggle="modal" data-target="#exampleModal">Cras justo odio</li>
-  <li class="list-group-item ourItem" data-toggle="modal" data-target="#exampleModal">Dapibus ac facilisis in</li>
-  <li class="list-group-item ourItem" data-toggle="modal" data-target="#exampleModal">Morbi leo risus</li>
-  <li class="list-group-item ourItem" data-toggle="modal" data-target="#exampleModal">Porta ac consectetur ac</li>
-  <li class="list-group-item ourItem" data-toggle="modal" data-target="#exampleModal">Vestibulum at eros</li>
+    @foreach($item as $key=>$items)
+  <li class="list-group-item ourItem" data-toggle="modal" data-target="#exampleModal">{{$items->items}}</li>
+  @endforeach
 </ul>
+<hr>
+{{$item->links()}}
+</div>
 </div>
 </div>
     <!-- Add customer modal -->
@@ -36,7 +38,7 @@
       <div class="card-header" id="title">Add New Item</div>
       <div class="modal-body">
   <div class="form-group">
-    <label for="exampleInputname">Full Name</label>
+    <label for="exampleInputname">Item Name</label>
     <input type="text" name="items" id="addItem" required="" class="form-control" id="exampleInputname"  placeholder="Enter addItem name">
   </div>
   
