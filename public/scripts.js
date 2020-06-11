@@ -1,11 +1,14 @@
  $(document).ready(function() {
   $(document).on('click', '.ourItem',function(event){
         var text= $(this).text();
+        var id = $(this).find('#itemId').val();
         $('#addItem').val(text);
         $('#title').text('Edit Item');
         $('#delete').show('400');
         $('#savechanage').show('400');
          $('#AddButton').hide('400');
+         $('#id').val(id);
+
         console.log(text);
    
     });
@@ -36,5 +39,20 @@
       }
     });      
   }); 
+      $('#delete').click(function(event){
+        var id =$("$id").val();
+        url: "delete/"+id,
+
+        type: 'DELETE',
+
+        data: {
+
+            "id": id,
+
+            "_token": token,
+       
+      $("#itms").load(location.href + " #itms");
+      alert(data);
+            });
      
  });

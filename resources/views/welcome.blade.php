@@ -19,7 +19,9 @@
 <div class="pannel-body" id="itms">
   <ul class="list-group">
     @foreach($item as $key=>$items)
-  <li class="list-group-item ourItem" data-toggle="modal" data-target="#exampleModal">{{$items->items}}</li>
+  <li class="list-group-item ourItem" data-toggle="modal" data-target="#exampleModal">{{$items->items}}
+<input type="hidden" id="itemId"  name="">
+  </li>
   @endforeach
 </ul>
 <hr>
@@ -40,12 +42,13 @@
       <div class="modal-body">
   <div class="form-group">
     <label for="exampleInputname">Item Name</label>
+    <input type="hidden" id="id" name="">
     <input type="text" name="items" id="addItem" required="" class="form-control" id="exampleInputname"  placeholder="Enter addItem name">
   </div>
   
     <div class="form-group">
   <button type="submit" id="AddButton" class="btn btn-primary">Submit</button>
-  <button type="button" id="delete" class="btn btn-danger">Delete</button>
+  <button type="button" id="delete"  class="btn btn-danger">Delete</button>
   <button type="button" id="savechanage"  class="btn btn-warning">Save Change</button>
 </div>
       </div>

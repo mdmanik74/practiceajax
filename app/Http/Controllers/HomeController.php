@@ -19,5 +19,11 @@ class HomeController extends Controller
         $item->save();
         return 'Data Successfully insert';
 	}
-   
+
+	public function delete($id){
+		
+        User::find($id)->delete($id);
+        return 'Data Successfully Delete';
+	}
+ 
 }
