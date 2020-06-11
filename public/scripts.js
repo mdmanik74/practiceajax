@@ -1,6 +1,5 @@
  $(document).ready(function() {
-    $('.ourItem').each(function(){
-      $(this).click(function(event){
+  $(document).on('click', '.ourItem',function(event){
         var text= $(this).text();
         $('#addItem').val(text);
         $('#title').text('Edit Item');
@@ -8,9 +7,9 @@
         $('#savechanage').show('400');
          $('#AddButton').hide('400');
         console.log(text);
-      });
+   
     });
-     $('#addNew').click(function(event){
+    $(document).on('click','#addNew',function(event){
      	var text= $(this).text();
         $('#addItem').val('');
         $('#title').text('Add New Item');
@@ -31,6 +30,7 @@
         $('input').val('');
       console.log($('input[name=items]').val());
       $("#itms").load(location.href + " #itms");
+      $("#countes").load(location.href + " #countes");
         alert(data);
        
       }
