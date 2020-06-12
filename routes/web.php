@@ -14,5 +14,5 @@
 
 Route::get('/','HomeController@index')->name('welcome');
 Route::post('/create','HomeController@create')->name('create');
-Route::post('/delete/{id}','HomeController@delete')->name('delete');
+Route::get('/delete/{id}','HomeController@delete')->name('delete');
 

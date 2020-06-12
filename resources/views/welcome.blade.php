@@ -20,7 +20,7 @@
   <ul class="list-group">
     @foreach($item as $key=>$items)
   <li class="list-group-item ourItem" data-toggle="modal" data-target="#exampleModal">{{$items->items}}
-<input type="hidden" id="itemId"  name="">
+<input type="hidden" id="itemId" value="{{$items->id}}" name="">
   </li>
   @endforeach
 </ul>

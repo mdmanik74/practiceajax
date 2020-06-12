@@ -39,20 +39,17 @@
       }
     });      
   }); 
+
       $('#delete').click(function(event){
-        var id =$("$id").val();
-        url: "delete/"+id,
-
-        type: 'DELETE',
-
-        data: {
-
-            "id": id,
-
-            "_token": token,
-       
-      $("#itms").load(location.href + " #itms");
-      alert(data);
-            });
+        var id =$('#id').val();
+       $.post('delete',{'id':id,'_token':$('input[name=_token]').val()},function(data){
+         
+             $("#itms").load(location.href + " #itms");
+      $("#countes").load(location.href + " #countes");
+        
+    
+        })
+      })
+  
      
  });

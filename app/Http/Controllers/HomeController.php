@@ -22,7 +22,7 @@ class HomeController extends Controller
 
 	public function delete($id){
 		
-        User::find($id)->delete($id);
+        Item::find($id)->delete($id);
         return 'Data Successfully Delete';
 	}
  
