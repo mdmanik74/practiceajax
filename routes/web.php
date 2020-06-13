@@ -12,7 +12,8 @@
 */
 
 
-Route::get('/','HomeController@index')->name('welcome');
-Route::post('/create','HomeController@create')->name('create');
-Route::get('/delete/{id}','HomeController@delete')->name('delete');
 
+
+Auth::routes();
+Route::get('/','ContactController@index')->name('welcome');
+Route::get('/contact', 'ContactController@show')->name('show');
