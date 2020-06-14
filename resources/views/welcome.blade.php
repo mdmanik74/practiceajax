@@ -55,20 +55,20 @@
       </div>
       <div class="modal-body">
        <form method="post" class="form-horizontal" data-toggle="validator">
-        {{csrf_field() }} {{method_field('POST') }} 
+        @csrf
   <div class="form-group">
     <label for="exampleInputName">Full Name</label>
-    <input type="text" class="form-control"  aria-describedby="nameHelp" placeholder="Enter name">
+    <input type="text" class="form-control" name="name"  aria-describedby="nameHelp" placeholder="Enter name">
     <span class="help-block with-errors"></span>
   </div>
 
   <div class="form-group">
     <label for="exampleInputName">Phone</label>
-    <input type="number" class="form-control" autofocus=""  aria-describedby="nameHelp" placeholder="Enter number">
+    <input type="number" class="form-control" name="phone" autofocus=""  aria-describedby="nameHelp" placeholder="Enter number">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
   </div>
   
   <button type="submit" class="btn btn-primary">Submit</button>

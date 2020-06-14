@@ -13,9 +13,33 @@ public function index(){
     	return view('welcome',compact('contact'));
     }
 
-    // public function show(){
+     public function store(Request $request){
 
-    // 	$contact=Contact::latest()->pagenate(10);
-    // 	return view('welcome',compact('contact'))
-    // }
+    	{
+        $rules = array(
+            'name'    =>  'required',
+            'phone'     =>  'required',
+            'email'         =>  'required'
+        );
+
+        $error = Validator::make($request->all(), $rules);
+
+        if($error->fails())
+        {
+            return response()->json(['errors' => $error->errors()->all()]);
+        }
+
+       
+
+        $form_data = array(
+            'name'        =>  $request->name,
+            'phone'         =>  $request->phone,
+            'email'             =>  $email
+        );
+
+        Contact::create($form_data);
+
+        return response()->json(['success' => 'Data Added successfully.']);
+    }
+     }
 }

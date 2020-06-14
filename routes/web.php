@@ -16,4 +16,4 @@
 
 Auth::routes();
 Route::get('/','ContactController@index')->name('welcome');
-Route::get('/contact', 'ContactController@show')->name('show');
+Route::get('/contact', 'ContactController@store')->name('store');
